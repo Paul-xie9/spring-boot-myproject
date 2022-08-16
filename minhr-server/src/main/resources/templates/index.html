@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+    </script>
+    <title>首页</title>
+</head>
+<body>
+<a href="uploadFile.html">到上传页面</a>
+<!--<div id="test"></div>-->
+<!--<div id="bb"></div>-->
+<!--<input type="button" value="/test请求" onclick="test()">-->
+<!--<input type="button" value="b/b请求" onclick="bb()">-->
+</body>
+<script>
+    function test() {
+        $.ajax({
+            url:'http://localhost:8080/t',
+            type:'get',
+            success:function (res){
+                $('#test').html(res)
+            }
+        })
+    }
+
+    function bb() {
+        $.ajax({
+            url: 'http://localhost:8080/b/b',
+            type: 'get',
+            success:function (res){
+                $('bb').html(res)
+            }
+        })
+    }
+</script>
+</html>

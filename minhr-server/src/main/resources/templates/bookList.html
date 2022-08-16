@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书列表</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>图书名</td>
+        <td>作者</td>
+    </tr>
+<!--<#&#45;&#45;    ftl&ndash;&gt;-->
+<!--<#&#45;&#45;    <#if books ??&&(books.size()>0)>&ndash;&gt;-->
+<!--<#&#45;&#45;    <#list books as book>&ndash;&gt;-->
+<!--<#&#45;&#45;    <tr>&ndash;&gt;-->
+<!--<#&#45;&#45;        <td>${book.name}</td>&ndash;&gt;-->
+<!--<#&#45;&#45;        <td>${book.author}</td>&ndash;&gt;-->
+<!--<#&#45;&#45;    </tr>&ndash;&gt;-->
+<!--<#&#45;&#45;    </#list>&ndash;&gt;-->
+<!--<#&#45;&#45;    </#if>&ndash;&gt;-->
+
+<!--    <#&#45;&#45;    html&ndash;&gt;-->
+    <tr th:each="book:${books}">
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.author}"></td>
+    </tr>
+</table>
+</body>
+</html>
