@@ -6,11 +6,13 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  * @author 11098
  */
 @SpringBootApplication
+@ServletComponentScan
 public class MinhrApplication {
 
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package com.paul.minhr.config.mvc;
 
-import com.paul.minhr.Handler.MyHandlerInterceptor;
+import com.paul.minhr.handler.MyHandlerInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
