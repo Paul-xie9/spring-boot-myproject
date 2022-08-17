@@ -41,18 +41,18 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:8081");
     }
 
-    /**
-     * 配置拦截器
-     * @param registry
-     */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new MyHandlerInterceptor())
-                //拦截路径
-                .addPathPatterns("/**")
-                //排除的路径
-                .excludePathPatterns("/t");
-    }
+//    /**
+//     * 配置拦截器
+//     * @param registry
+//     */
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new MyHandlerInterceptor())
+//                //拦截路径
+//                .addPathPatterns("/**")
+//                //排除的路径
+//                .excludePathPatterns("/t");
+//    }
 
     /**
      * 静态资源过滤策略

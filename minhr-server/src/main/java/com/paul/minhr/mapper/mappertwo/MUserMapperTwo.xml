@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.paul.minhr.mapper.mapperTwo.MUserMapperTwo">
+    <update id="updateUser" parameterType="com.paul.minhr.mapper.mappertwo.MUserMapperTwo">
+        update m_user set username=#{usename} where id=#{id}
+    </update>
+    <select id="getUserById" resultType="com.paul.minhr.model.MUser" parameterType="long">
+        select *from m_user where id=#{id}
+    </select>
+</mapper>

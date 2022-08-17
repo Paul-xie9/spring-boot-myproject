@@ -36,6 +36,30 @@ server:
 
 
 spring:
+  #配置数据源
+  datasource:
+    one:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql:///studentscore
+      username: root
+      password: root
+    two:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql:///vueblog
+      username: root
+      password: root
+
+  #jpa配置
+  jpa:
+    #是否在控制台打印JPA执行过程生成的SQL
+    show-sql: true
+    #对应的数据库是MySQL
+    database: mysql
+    #在项目启动时根据实体类更新数据库中的表
+    hibernate:
+      ddl-auto: update
+
+
   #thymeleaf配置
   thymeleaf:
     #是否开启缓存,开发时设置为fase,默认true
@@ -100,7 +124,13 @@ spring:
 
 
 
+
+
+
+
+
 book:
   name: 西游记
   author: 吴承恩
-
+#mybatis:
+#  config-location: classpath:/mapper/*.xml

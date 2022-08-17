@@ -1,9 +1,15 @@
 package com.paul.minhr.controller;
 
+import com.paul.minhr.mapper.daoone.StudentDao;
+import com.paul.minhr.mapper.mapperone.StudentMapperOne;
+import com.paul.minhr.mapper.mappertwo.MUserMapperTwo;
 import com.paul.minhr.model.Book;
-import lombok.extern.log4j.Log4j;
+import com.paul.minhr.model.MUser;
+import com.paul.minhr.model.Student;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,14 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * @Author Paul.x
@@ -27,6 +32,77 @@ import java.util.UUID;
 @Log4j2
 @RestController
 public class TestController {
+    @Autowired
+    StudentDao studentDao;
+    @RequestMapping("/jpaTest")
+    public String jpaTest(){
+        return Arrays.toString(studentDao.findAll().toArray());
+    }
+
+
+//    @Autowired
+//    StudentMapperOne studentMapperOne;
+//    @Autowired
+//    MUserMapperTwo userMapperTwo;
+//    @RequestMapping("/mybatisTest")
+//    public String mybatisTest(){
+//        Student student = studentMapperOne.getStudentById(1L);
+//        MUser user = userMapperTwo.getUserById(1L);
+//        return "user=>"+user.toString()+"\nstudent=>"+student.toString();
+//    }
+
+
+
+
+
+
+//    @Resource(name = "jdbcTemplateOne")
+//    JdbcTemplate jdbcTemplateOne;
+//    @Autowired
+//    @Qualifier(value = "jdbcTemplateTwo")
+//    JdbcTemplate jdbcTemplateTwo;
+//
+//    @RequestMapping("/jdbcTemplateOne")
+//    public String jdbcTemplateOne() throws SQLException {
+//        return Objects.requireNonNull(jdbcTemplateOne.getDataSource()).getConnection().getCatalog();
+//    }
+//    @RequestMapping("/jdbcTemplateTwo")
+//    public String jdbcTemplateTwo() throws SQLException {
+//        return Objects.requireNonNull(jdbcTemplateTwo.getDataSource()).getConnection().getCatalog();
+//    }
+
+
+//    @RequestMapping("/findAllStudent")
+//    public String findAllStudent(){
+//        return Arrays.toString(studentDao.findAll().toArray());
+//    }
+
+//    @Resource
+//    StudentMapper studentMapper;
+//    @RequestMapping("/updateStudent")
+//    public String updateStudent(){
+//        Student student = new Student();
+//        student.setId(1L);
+//        student.setName("zhangsan");
+//        student.setBirthday(new Date());
+//        return studentMapper.updateStudent(student)>0? "success":"fail";
+//    }
+
+
+//    @Autowired
+//    StudentDao studentDao;
+
+//    @RequestMapping("/updateStudent")
+//    public String updateStudent(){
+//        Student student = new Student();
+//        student.setId(1L);
+//        student.setName("zhangsan");
+//        student.setBirthday(new Date());
+//       return studentDao.updateStudent(student)>0? "success":"fail";
+//    }
+
+
+
 
     @PostMapping("/uploads")
     public String uploads(MultipartFile[] uploadFiles, HttpServletRequest request){
@@ -74,6 +150,8 @@ public class TestController {
 
     @Autowired
     Book book;
+
+
 
     @RequestMapping("/")
     public ModelAndView index(){
