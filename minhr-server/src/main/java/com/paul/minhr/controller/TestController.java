@@ -9,6 +9,9 @@ import com.paul.minhr.model.Student;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,11 +36,28 @@ import java.util.*;
 @RestController
 public class TestController {
     @Autowired
-    StudentDao studentDao;
-    @RequestMapping("/jpaTest")
-    public String jpaTest(){
-        return Arrays.toString(studentDao.findAll().toArray());
+    StringRedisTemplate stringRedisTemplate;
+
+    /**
+     * StringRedisTemplate是RedisTemplate的子类，StringRedisTemplate中的key和value都是字符串，
+     * 采用的序列化方案是StringRedisSerializer，而RedisTemplate则可以用来操作对象，
+     * RedisTemplate采用的序列化方案是JdkSerializationRedisSerializer
+     */
+    @RequestMapping("/redisTest")
+    public void redisTest(){
+        ValueOperations<String, String> opsForValue = stringRedisTemplate.opsForValue();
+        opsForValue.set("name","xiaoming");
+        String name = opsForValue.get("name");
+        log.info("name=>"+name);
     }
+
+
+//    @Autowired
+//    StudentDao studentDao;
+//    @RequestMapping("/jpaTest")
+//    public String jpaTest(){
+//        return Arrays.toString(studentDao.findAll().toArray());
+//    }
 
 
 //    @Autowired

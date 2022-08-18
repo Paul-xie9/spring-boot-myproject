@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.paul</groupId>
-    <artifactId>spring-boot-CrossOrigin</artifactId>
+    <artifactId>spring-boot-cache</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-CrossOrigin</name>
+    <name>spring-boot-cache</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
@@ -27,17 +27,36 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.7.2</version>
         </dependency>
-        <!--    spring-session-data-redis    -->
+        <!--    jedis    -->
         <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-data-redis</artifactId>
-            <version>2.7.0</version>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.8.0</version>
         </dependency>
+
+
+        <!--        &lt;!&ndash;    spring-boot-starter-cache    &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-cache</artifactId>-->
+        <!--            <version>2.7.2</version>-->
+        <!--        </dependency>-->
+        <!--        &lt;!&ndash;    ehcache-core    &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>net.sf.ehcache</groupId>-->
+        <!--            <artifactId>ehcache-core</artifactId>-->
+        <!--            <version>2.4.3</version>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
         </dependency>
     </dependencies>
 

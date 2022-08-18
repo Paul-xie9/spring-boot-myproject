@@ -8,5 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Date 2022/8/17 17:49
  * @Description
  */
-public interface MUserTwo extends JpaRepository<MUser,Integer> {
+//public interface MUserTwo extends JpaRepository<MUser,Integer> {
+//}
+public interface MUserTwo {
 }

@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @Date 2022/8/16 22:46
  * @Description
  */
-public interface StudentDao extends JpaRepository<Student,Integer> {
-}
-
-//public class StudentDao{
+//public interface StudentDao extends JpaRepository<Student,Integer> {
 //}
+
+public class StudentDao{
+}

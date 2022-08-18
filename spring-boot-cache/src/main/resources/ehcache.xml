@@ -1,0 +1,35 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<ehcache name="max" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ehcache.xsd">-->
+<!--    &lt;!&ndash;支持内存和磁盘两种存储&ndash;&gt;-->
+<!--    <diskStore path="java.io.tmpdir"/>&lt;!&ndash;path表示路径&ndash;&gt;-->
+<!--    <defaultCache-->
+<!--            maxElementsInMemory="100000"-->
+<!--            eternal="false"-->
+<!--            timeToIdleSeconds="1800"-->
+<!--            timeToLiveSeconds="0"-->
+<!--            overflowToDisk="true"-->
+<!--            diskPersistent="false"-->
+<!--            diskExpiryThreadIntervalSeconds="120"-->
+<!--            memoryStoreEvictionPolicy="LRU"-->
+<!--    />-->
+<!--    &lt;!&ndash;diskPersistent 是否在磁盘上实例化，重启jvm后失效&ndash;&gt;-->
+<!--    &lt;!&ndash;diskExpiryThreadIntervalSeconds 检测缓存对象的线程，运行的时间间隔&ndash;&gt;-->
+<!--    <cache name="book_cache"-->
+<!--           maxElementsInMemory="10000"-->
+<!--           eternal="false"-->
+<!--           overflowToDisk="true"-->
+<!--           timeToIdleSeconds="1800000"-->
+<!--           timeToLiveSeconds="0"-->
+<!--           memoryStoreEvictionPolicy="LFU" >-->
+
+<!--    </cache>-->
+<!--    &lt;!&ndash;maxElementsInMemory最大允许存储10000个元素&ndash;&gt;-->
+<!--    &lt;!&ndash;eternal是否为永久，否&ndash;&gt;-->
+<!--    &lt;!&ndash;timeToIdleSeconds对象在失效前，闲置的最大时间&ndash;&gt;-->
+<!--    &lt;!&ndash;timeToLiveSeconds对象的最大生存时间，从创建开始最大时间，只在eternal为false时生效&ndash;&gt;-->
+<!--    &lt;!&ndash;memoryStoreEvictionPolicy内存满后的清空策略，有三种FIFO,LFU,LRU&ndash;&gt;-->
+<!--    &lt;!&ndash;FIFO 先进先出-->
+<!--        LFU 使用次数最少（对象有计数值count）-->
+<!--        LRU 创建时间最早的清空（对象有时间戳）-->
+<!--    &ndash;&gt;-->
+<!--</ehcache>-->

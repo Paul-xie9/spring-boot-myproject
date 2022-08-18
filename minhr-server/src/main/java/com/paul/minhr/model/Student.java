@@ -2,7 +2,8 @@ package com.paul.minhr.model;
 
 import lombok.Data;
 
-import javax.persistence.*;
+//import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -16,24 +17,24 @@ import java.util.Date;
  *           默认情况下，生成的表中字段的名称就是实体类中属性的名称
  *[@Transient]:表示在生成数据库中的表时，该属性被忽略，即不生成对应的字段
  */
-@Data
-@Entity(name = "Student")
-public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "name",nullable = false)
-    private String name;
-    private Date birthday;
-    @Transient
-    private boolean isDel;
-
-}
-
-
 //@Data
+//@Entity(name = "Student")
 //public class Student {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Long id;
+//    @Column(name = "name",nullable = false)
 //    private String name;
 //    private Date birthday;
+//    @Transient
+//    private boolean isDel;
+//
 //}
+
+
+@Data
+public class Student implements Serializable {
+    private Long id;
+    private String name;
+    private Date birthday;
+}

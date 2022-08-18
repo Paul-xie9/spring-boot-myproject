@@ -49,7 +49,29 @@ spring:
       username: root
       password: root
 
-  #jpa配置
+  #redis配置
+  redis:
+    #使用的Redis库的编号，Redis中提供了16个database，编号为0～15
+    database: 0
+    #Redis实例的地址
+    host: localhost
+    #Redis端口号，默认是6379
+    port: 8001
+    #Redis登录密码
+#    password: xbcroot
+    jedis:
+      pool:
+        #Redis连接池的最大连接数
+        max-active: 8
+        #Redis连接池中的最大空闲连接数
+        max-idle: 8
+        #连接池的最大阻塞等待时间，默认为-1，表示没有限制
+        max-wait: -1
+        #连接池最小空闲连接数
+        min-idle: 0
+
+
+    #jpa配置
   jpa:
     #是否在控制台打印JPA执行过程生成的SQL
     show-sql: true
